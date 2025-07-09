@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    
+    float float_val = 76.78;
+    int square_input = 16;
+    int base = 2;
+    int power = 3;
+
+  
+    int floor_val = (int)floor(float_val);
+    int ceil_val = (int)ceil(float_val);
+    int sqrt_val = (int)sqrt(square_input);
+    int pow_val = (int)pow(base, power);
+    printf("%d\n", floor_val);
+    printf("%d\n", ceil_val);
+    printf("%d\n", sqrt_val);
+    printf("%d\n", pow_val);
+
+    return 0;
+}
