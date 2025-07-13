@@ -1,0 +1,85 @@
+include <stdio.h>
+
+int main() {
+
+    int tickets;
+
+    char refreshment, coupon, circle;
+
+    float ticketCost, totalCost;
+
+
+
+    scanf("%d", &tickets);
+
+    scanf(" %c", &refreshment);
+
+    scanf(" %c", &coupon);
+
+    scanf(" %c", &circle);
+
+
+    if (tickets < 5 || tickets > 40) {
+
+        printf("Minimum of 5 and Maximum of 40 Tickets\n");
+
+        return 0;
+
+    }
+
+    
+
+    if (circle != 'k' && circle != 'q') {
+
+        printf("Invalid Input\n");
+
+        return 0;
+
+    }
+
+    
+
+    if (circle == 'k') {
+
+        ticketCost = 75;
+
+    } else {
+
+        ticketCost = 150;
+
+    }
+
+
+    totalCost = tickets * ticketCost;
+
+    
+
+    if (tickets > 20) {
+
+        totalCost -= totalCost * 0.10;
+
+    }
+
+    
+
+    if (coupon == 'y') {
+
+        totalCost -= totalCost * 0.02;
+
+    }
+
+
+
+    if (refreshment == 'y') {
+
+        totalCost += tickets * 50;
+
+    }
+
+    
+
+    printf("Ticket cost:%.2f\n", totalCost);
+
+    return 0;
+
+}
