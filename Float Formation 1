@@ -4,17 +4,21 @@
 
 int main() {
 
+    float value;
 
-    float num = 67.98;
+    
 
-    printf("%.6f\n", num);       
-
-    printf("%.4f\n", num);       
-
-    printf("%.2f\n", num);       
+    scanf("%f", &value);
 
 
-    printf("%.0f\n", round(num));  
+
+    printf("%f\n", value);        
+
+    printf("%.4f\n", value);      
+
+    printf("%.2f\n", value);      
+
+    printf("%d\n", (int)round(value)); 
 
     return 0;
 
