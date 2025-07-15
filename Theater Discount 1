@@ -1,85 +1,44 @@
-include <stdio.h>
+#include <stdio.h>
 
 int main() {
-
     int tickets;
-
-    char refreshment, coupon, circle;
-
-    float ticketCost, totalCost;
-
-
+    char refreshment, coupon, ticketType;
+    float costPerTicket, totalCost = 0;
 
     scanf("%d", &tickets);
-
     scanf(" %c", &refreshment);
-
     scanf(" %c", &coupon);
-
-    scanf(" %c", &circle);
-
+    scanf(" %c", &ticketType);
 
     if (tickets < 5 || tickets > 40) {
-
         printf("Minimum of 5 and Maximum of 40 Tickets\n");
-
         return 0;
-
     }
 
-    
-
-    if (circle != 'k' && circle != 'q') {
-
-        printf("Invalid Input\n");
-
-        return 0;
-
-    }
-
-    
-
-    if (circle == 'k') {
-
-        ticketCost = 75;
-
+    if (ticketType == 'k') {
+        costPerTicket = 75.0;
+    } else if (ticketType == 'q') {
+        costPerTicket = 150.0;
     } else {
-
-        ticketCost = 150;
-
+        printf("Invalid Input\n");
+        return 0;
     }
 
-
-    totalCost = tickets * ticketCost;
-
-    
+    totalCost = tickets * costPerTicket;
 
     if (tickets > 20) {
-
-        totalCost -= totalCost * 0.10;
-
+        totalCost *= 0.9;
     }
 
-    
-
-    if (coupon == 'y') {
-
-        totalCost -= totalCost * 0.02;
-
+    if (coupon == 'y' || coupon == 'Y') {
+        totalCost *= 0.98;
     }
 
-
-
-    if (refreshment == 'y') {
-
+    if (refreshment == 'y' || refreshment == 'Y') {
         totalCost += tickets * 50;
-
     }
-
-    
 
     printf("Ticket cost:%.2f\n", totalCost);
 
     return 0;
-
 }
