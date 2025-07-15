@@ -1,17 +1,17 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
-    char ch = 'u'; 
+    char ch;
+    scanf(" %c", &ch);
 
+    if (isalpha(ch)) {
+        char lowerCh = tolower(ch);
 
-    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
-        switch (ch) {
-            case 'A': case 'E': case 'I': case 'O': case 'U':
-            case 'a': case 'e': case 'i': case 'o': case 'u':
-                printf("The Character %c is Vowel\n", ch);
-                break;
-            default:
-                printf("The Character %c is Consonant\n", ch);
+        if (lowerCh == 'a' || lowerCh == 'e' || lowerCh == 'i' || lowerCh == 'o' || lowerCh == 'u') {
+            printf("The Character %c is Vowel\n", ch);
+        } else {
+            printf("The Character %c is Consonant\n", ch);
         }
     } else {
         printf("Invalid Input\n");
